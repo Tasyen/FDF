@@ -5,6 +5,13 @@
 </head>
 <body>
 <h2>Syntax</h2>
+<p>A Frame Definition File is a fileType used in warcraft 3 to define an UI-Frame. Fdf has a second use case, they can define StringLists with such a StringList one can set Localized Strings.<br>Inside fdf one can write Text which is ignored by the fdf parser. There are Line comments and area commentents.<br>
+<pre>// I am a Line comment
+
+/* Opens the Area Comment
+*
+*
+*/ End the Area Comment</pre></p>
 <p>Fdf describes Frames and StringLists. The content of a fdf can be seen as a collection of fdfActions.</p>
 <p>There exists something like 105 fdf-actions. Each of this actions is followed by a group of arguments which are either seperated by whitespace or by comma + optional whitespace. Between the first argument and the Action is whitespace. The used rule of seperation depends on the Action. Some FDF-Actions have multiple Versions with different amount of arguments.</p>
 <p>An example for each:</p>
