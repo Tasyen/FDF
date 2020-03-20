@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Position</title>
+</head>
+<body>
+<h2>Position</h2>
+<p>Positions on Screen are an important knowlage when using this whole UI-Frame feature. Warcraft 3 was at the beginning a 4:3 only Game. Hence their own UI-FrameWork has a coordinate system that makes sense for the 4:3 part.</p>
+<p>The Position goes from 0.0/0.0 at the Bottomleft of the minimap to the Topright with 0.8/0.6 (Topright of the Upkeep Level). The used Resolution does not matter, this values do not change. This Values are also used for Size of Frames. Pixel based size/Coords are only doable with some conversion math.</p>
+<img src="https://www.hiveworkshop.com/attachments/coords-image-56-jpg.325821/" alt="Coordinates" height="400" width="600">
+<p>One can imagine Frames as rectangles when one sets size and position. When only one FramePoint is placed the choosen FramePoint has a strong impact on the result. It limites the directions the Frame expands.<br>When using a point containing:
+<ul><li>LEFT can only extend to the right x wise ->.</li>
+<li>RIGHT can only extend to the left x wise <-.</li>
+<li>CENTER extends equal in all directions <-></li>
+<li>TOP can only extend downwards y wise</li>
+<li>BOTTOM can only extend upwards y wise.​</li>
+</ul>
+<br>Using different Points alters the result and can do some wanted Results more easy.
+</p>
+<p>Custom created Frames from the Frame group can not leave the 4:3 part of the screen. If a part of them leave it, they become malformed. A TEXT-Frame might cut off some chars. A BACKDROP becomes smaller and with that also Buttons and many others etc.<br>SimpleFrames are free from that limitation.</p>
+
+<p>When one creates frames in fdf one can also set the position of frames. Here one has 2 to 3 options based on the current Frame:
+<ul><li>SetPoint FramePoint-Own, FrameName, FramePoint-FrameName, xOffset , yOffset,</li>
+<li>SetAllPoints,</li>
+<li>Anchor FramePoint, x, y, (only String/Texure)​</li></ul>
+SetPoint & Anchor use this Points in fdf:
+<ul><li>TOPLEFT</li>
+<li>TOP</li>
+<li>TOPRIGHT</li>
+<li>LEFT</li>
+<li>CENTER</li>
+<li>RIGHT</li>
+<li>BOTTOMLEFT</li>
+<li>BOTTOM</li>
+<li>BOTTOMRIGHT</li>
+</ul>
+
+SetPoint can be seen as BlzFrameSetPoint(self, FramePoint-Own, BlzGetFrameByName(FrameName, 0), FramePoint-FrameName, x, y)<br>
+With UseActiveContext, the Frame will connect to the relative Frame with the same CreateContext the current Frame is created with.</p>
+<p>This is an example fdf-Frame without UseActiveContext. It is not used because the frame shall attach itself to ("ConsoleUI", 0) even when created with a CreateContext that is not 0.
+That Frame of type BACKDROP with Name "Test" displays when created a Paladin-Icon at Top Left of the screen (The fdf containing that would have to be loaded over a toc first).<br>
+<pre>Frame "BACKDROP" "Test" {
+    Width 0.1,
+    Height 0.1,
+    SetPoint TOPLEFT, "ConsoleUI", TOPLEFT, 0, 0,
+    BackdropBackground "ReplaceableTextures\CommandButtons\BTNHeroPaladin",
+}</pre>
+<br>
+SetAllPoints is equal to BlzFrameSetAllPoints(self, parent).<br>
+Anchor is BlzFrameSetPoint(self, point, parent, point, x, y)
+</p>
+</body>
+</html>
