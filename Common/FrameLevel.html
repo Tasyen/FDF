@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameLevel</title>
+</head>
+<body>
+<h2>FrameLevel</h2>
+<p>When multiple Frames are at the same space on the screen, there is a rule that tells who will take the mouse Events and is displayed on top. FrameLevel set with BlzFrameSetLevel manages that, it only matters when Frames colide/overlap on the screen. Only visible Frames matter for the FrameLevel order.<br>FrameLevel works different for SimpleFrames and Frames.</p>
+
+<p/>For Frames:<br>
+FrameLevel define the order in which child-Frames are above their Parent. Frames only compete with their siblings. They are ordered descending. The childFrame with the highest Level is onTop. the one with the lowest Level is directly above the parent but below it's brothers and sisters. A Frame's childFrames are on default above the siblings of their Parent and only compete with their own siblings.<br><br>
+
+For SimpleFrames:<br>
+The one with the highest Level is on Top parentship does not matter. When an SimpleFrame is created it copies the current Level of the Parent so it is above it. But one can change the Levels to have the parent on top, this also means that later changes to Level of the Parent are not taken over by child-SimpleFrames except for Texture/Strings, they do.</p>
+
+</body>
+</html>

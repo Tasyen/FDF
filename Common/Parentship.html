@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Parent</title>
+</head>
+<body>
+<h2>Parent</h2>
+<p>Frame - Parent is a powerful and useful concept of warcraft 3's UI-Frame System. Every frame has a parent frame. Any frame can have any amount of child frames. In the same time any child frame also can have any amount of child frames. When creating a new frame one also has to choose the Parent, as all create frame natives require an owner/parent.</p>
+<p>The 2 Frame groups can not be parent/child of each other while the game supports you to some degree to spawn a Frame anyway the wanted parent isn't the parent anymore in such a case.</p>
+<p>In many examples custom Frames are created as child of GAME_UI which is done to simple down the example. But it is ineffective to create all custom Frames for GAME_UI, if one has Frames that are logical connected it would make more sense to collecte them as childs of one Frame.</p>
+<pre>FrameA child of Game_UI
+FrameB child of FrameA
+FrameC child of FrameA
+FrameD child of FrameA</pre>
+<p>FrameA is the parent a logical container of FrameB, FrameC and FrameD.</p>
+<h3>What are the Effects of Parent-Child</h3>
+<p>A child frame can only be visible when it's parent frame is visible. BlzFrameIsVisible also checks for the visibility of the parent frame. New created frames copy scale and alpha from their parent on default. This values can differ for the children when they are set (for the child frame) after the child frame was added to /created for the parent frame.</p>
+
+<pre>BlzFrameSetScale
+BlzFrameSetAlpha
+   When changing Parents the alpha value of the new Parent is copied.
+BlzFrameSetLevel
+   Frames created for a parent frame also have the same Level.</pre>
+A child tends to be visible above and is prefered by mouse events over its parent. SimpleFrames can break this rule when one changes Levels.
+
+<h3>2 Types of children</h3>
+I split childFrames in 2 Types <B>loose</B> children and <B>functional</B> children.
+
+<p><B>Functional</B> child frames can only be defined and created inside fdf such children have a strong connection to their parent and perform some functionality for the parentFrame hence the name. An example of such functional child frame is ButtonText "ScriptDialogButtonText",This childFrame styles the text for it's parent frame "ScriptDialogButton". Functional childFrames copy even more from the ParentFrame, their position is automatically handled and they copy the enable state.</p>
+<p>All ChildFrames not being functional child-Frames are <B>Loose</B> child-Frames. They can be added in fdf and code. They do not perform any direct functionality for their parent. This code creates a new loose child frame for parentFrame. BlzCreateFrame("frameName", parentFrame, 0, 0) The position of a loose childFrame is on default independent from it's parent, it does not even require the parent frame to be placed on the screen.That behaviour can be used to create Frames with a higher FrameLevel then their type supports: Create A BUTTON set its FrameLevel and create the wanted Frames using him as parent for example TEXT-Frames.</p>
+<p>Want to show/hide a whole bunch of Frames collect them under one ParentFrame and change the ParentFrame's visibility. Now it only takes one line to toggle the visibility.</p>
+
+<p>The FrameParent concept simples down a lot of stuff you might want to accomplish. Want to create a new option in menu, create your Frame for ("EscMenuMainPanel", 0). Now the frame requires the visibility of ("EscMenuMainPanel", 0) and you can focus on the behaviour of the frame itself instead of handling the visiblity which can be quite complicated when injecting into the normal warcraft 3 UI. Only non SimpleFrames cause the wanted Parent is a Frame.</p>
+<p>Want to add a new UnitInfo (if you find a place for it on the screen) create it for ("SimpleInfoPanelUnitDetail", 0). But you need a SimpleFrame</p>
+
+
+</body>
+</html>
