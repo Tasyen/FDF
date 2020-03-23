@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Frame</title>
+</head>
+<body>
+<h2>Frame</h2>
+<p>Format1: Frame "FRAMETYPE" "FrameName" {}</p>
+<p>Format2: Frame "FRAMETYPE" "FrameName" INHERITS "FrameNameInherited" {}</p>
+<p>Format3: Frame "FRAMETYPE" "FrameName" INHERITS WITHCHILDREN "FrameNameInherited" {}</p>
+<p>Purpose: Define a new Frame of "FRAMETYPE" with "FrameName". In Format2 fdf Actions from the inherited Frame are cloned. WithChildren will also clone fdfActions for child-Frames. The FrameName can be empty "", but it has to be there. The fdf-Actions inside {} belong to the Frame. I call a Frame defined outside of other Frames MainFrame it can be created and inherited. Frames defined inside Frames are child-Frames.
+<p>Example: Frame "FRAME" "TimerDialog"</p>
+<p>Example: Frame "BACKDROP" "QuestButtonBackdropTemplate" INHERITS "QuestButtonBaseTemplate"</p>
+<p>Example: Frame "GLUETEXTBUTTON" "ScriptDialogButton" INHERITS WITHCHILDREN "EscMenuButtonTemplate"</p>
+</body>
+</html>
