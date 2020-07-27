@@ -8,6 +8,8 @@
 <p>Positions on Screen are an important knowlage when using this whole UI-Frame feature. Warcraft 3 was at the beginning a 4:3 only Game. Hence their own UI-FrameWork has a coordinate system that makes sense for the 4:3 part.</p>
 <p>The Position goes from 0.0/0.0 at the Bottomleft of the minimap to the Topright with 0.8/0.6 (Topright of the Upkeep Level). The used Resolution does not matter, this values do not change. This Values are also used for Size of Frames. Pixel based size/Coords are only doable with some conversion math.</p>
 <img src="https://www.hiveworkshop.com/attachments/coords-image-56-jpg.325821/" alt="Coordinates" height="400" width="600">
+<img src="https://www.hiveworkshop.com/attachments/warcraft-3-coord-system-3-jpg.359576/" alt="Coordinates2" height="400" width="600">
+    
 <p>One can imagine Frames as rectangles when one sets size and position. When only one FramePoint is placed the choosen FramePoint has a strong impact on the result. It limites the directions the Frame expands.<br>When using a point containing:
 <ul><li>LEFT can only extend to the right x wise ->.</li>
 <li>RIGHT can only extend to the left x wise <-.</li>
@@ -18,6 +20,9 @@
 <br>Using different Points alters the result and can do some wanted Results more easy.
 </p>
 <p>Custom created Frames from the Frame group can not leave the 4:3 part of the screen. If a part of them leave it, they become malformed. A TEXT-Frame might cut off some chars. A BACKDROP becomes smaller and with that also Buttons and many others etc.<br>SimpleFrames are free from that limitation.</p>
+<p>One can free Frames from that 4:3 limitation by creating them for a different Parent then GAME_UI, in Reforged such a Parent could be ("ConsoleUIBackdrop",0). Through that don't comes with a price. Using ("ConsoleUIBackdrop",0) as parent pushes them to a lower Layer, below SimpleFrames.
+One also could use BlzGetFrameByName("Leaderboard", 0) or BlzGetFrameByName("Multiboard", 0). This are above SimpleFrames but one has to create them first with the none Frame api.
+Your custom Frames can also be a child's child of that other Parents, the 4:3 Limitation is still gone.</p>
 
 <p>When one creates frames in fdf one can also set the position of frames. Here one has 2 to 3 options based on the current Frame:
 <ul><li>SetPoint FramePoint-Own, FrameName, FramePoint-FrameName, xOffset , yOffset,</li>
