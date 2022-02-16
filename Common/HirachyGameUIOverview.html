@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Hirachy GameUIOverview</title>
+</head>
+<body>
+<h2>GameUI - Overview</h2>
+<p>GameUI is the ancestor of non SimpleFrames. This is the overview Page. It only shows the direct children.</p>
+<p>ORIGIN_FRAME_GAME_UI has on default 14 children. Multiboard, Leaderboard, TimerDialog, and QuestDialog are added when needed. With them it has 19.<br>
+After anyone clicked the QuestDialog 2 further ones are added.
+Custom added Frames takes slots from [8] pushing others back after Chat/Log when created with prio(0)</p>
+
+<pre>[0] ORIGIN_FRAME_WORLD_FRAME
+[1] Probably Parent of World Object Hover info box & HP/Mana Bars
+[2] BottomUI Black Background "ConsoleUIBackdrop"
+[3] Parent of ORIGIN_FRAME_PORTRAIT
+[4] InventoryText, Related to the visuals of SimpleFrames, hiding it makes all SimpleFrames not visible but still clickable
+[5] Day Time Clock & Minimap are affected by this one, maybe ancestor/Parent
+[6] CinematicPanel
+[7] Chat/LogDialog
+[8] Multiboard
+[9] Leaderboard
+[10] TimerDialog
+[11] No Idea
+[12] QuestDialog
+[13] AllianceDialog
+[14] No Idea
+[15] EscMenuBackdrop
+[16] Chat Input
+[17] EscOptions
+[18] Mouse Cursor (Parent)
+</pre>
+
+</body>
+</html>

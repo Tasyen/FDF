@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Hirachy BottomCenterUI</title>
+</head>
+<body>
+<h2>BottomCenterUI</h2>
+<p>BottomCenterUI is a Child of ConsoleUI, but Quite big and important. The BottomCenterUI shows only one Panel at a Time. Based on the current need the panel is choosen, ("SimpleInventoryBar",0) & ("SimpleInventoryBar",0) are not part of the swaped panels.</p>
+<pre>
+[0] Single Unit "SimpleInfoPanelUnitDetail"
+	[0] "SimpleHeroLevelBar",0
+		[0] visual bar
+		[1] The Exp-Tooltipbox
+	[1] "SimpleProgressIndicator",0
+		[0] visual Box
+	[2] "SimpleBuildTimeIndicator",0
+		[0]
+	[3] "SimpleUnitStatsPanel",0
+		[x] "SimpleClassValue",0
+	[4] "SimpleInfoPanelIconDamage",0
+		[0] Mouse Listener
+	[5] "SimpleInfoPanelIconDamage",1
+		[0] Mouse Listener
+	[6] "SimpleInfoPanelIconArmor",2
+		[0] Mouse Listener
+	[7] "SimpleInfoPanelIconRank",3
+		[0] Mouse Listener
+	[8] "SimpleInfoPanelIconFood",4
+		[0] Mouse Listener
+	[9 "SimpleInfoPanelIconGold",5
+		[0] Mouse Listener
+	[10] "SimpleInfoPanelIconHero",6	
+		[0] "SimpleInfoPanelIconHeroText",6
+		[1] Mouse Listener
+	[11] "SimpleInfoPanelIconAlly",7
+		[0] Gold - Mouse Listener
+		[1] Lumber - Mouse Listener
+		[2] Food - Mouse Listener
+		[3] UpKeep - Mouse Listener
+	[12] ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR
+		[0 to 7] BuffIcons + mouse Listeners
+		[x] ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR_LABEL
+	[13]
+[1] Trainer "SimpleInfoPanelBuildingDetail",1
+	[0] "SimpleBuildTimeIndicator",1
+		[0] Bar Border
+	[1] Que Button Backgrounds
+	[2] Que Button next to the Progressbar
+	[3]	Que Bottom Button Container
+		[0 to 5] Button
+	[4]
+[2] Transporter "SimpleInfoPanelCargoDetail",2
+	[0] CargoContainer
+		[0 to 9] Cargo Button Container (includes Box, pos themself the first time a Transporter with content is selected)
+			[0] Button
+			[1] Life Bar
+			[2] Mana Bar
+[3] Item on Ground "SimpleInfoPanelItemDetail",3
+[4] selectable Gate/tree/etc "SimpleInfoPanelDestructableDetail",4
+[5] multiple unit group selection
+	[0] ContainerGroupButtons
+		[0 to 11] ButtonContainer
+			[0] Highlighter Background
+			[1] Button
+			[2] Life Bar
+			[3] Mana Bar
+[6] "SimpleInventoryBar",0
+	[0 to 5] "InventoryButton_0",0 to "InventoryButton_5",0
+		[0]
+[7] "SimpleInventoryCover",0 (covers the inventory buttons when no inventory)
+</pre>
+
+</body>
+</html>
