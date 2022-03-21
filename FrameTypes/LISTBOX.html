@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameType LISTBOX</title>
+</head>
+<body>
+<h2>FrameType LISTBOX</h2>
+<p>interactive List of Textoptions (<a href="LISTBOXITEM.html" target="iframe_contentarea">LISTBOXITEM</a>) of the Frame Family.</p>
+<p>it seems that (In V1.32.6) the frame api lacks events to use LISTBOX intuitive making it kinda weak. </p>
+
+<h3>FDF-Actions</h3>
+<ul>
+<li><a href="../Keywords/ControlBackdrop.html" target="iframe_contentarea">ControlBackdrop</a></li>
+<li><a href="../Keywords/ControlDisabledBackdrop.html" target="iframe_contentarea">ControlDisabledBackdrop</a></li>
+<li><a href="../Keywords/ControlDisabledPushedBackdrop.html" target="iframe_contentarea">ControlDisabledPushedBackdrop</a></li>
+<li><a href="../Keywords/ControlFocusHighlight.html" target="iframe_contentarea">ControlFocusHighlight</a></li>
+<li><a href="../Keywords/ControlMouseOverHighlight.html" target="iframe_contentarea">ControlMouseOverHighlight</a></li>
+<li><a href="../Keywords/ControlPushedBackdrop.html" target="iframe_contentarea">ControlPushedBackdrop</a></li>
+<li><a href="../Keywords/ListBoxScrollBar.html" target="iframe_contentarea">ListBoxScrollBar</a></li>
+<li><a href="../Keywords/ListBoxBorder.html" target="iframe_contentarea">ListBoxBorder</a></li>
+<li><a href="../Keywords/ListBoxItemHeight.html" target="iframe_contentarea">ListBoxItemHeight</a></li>
+<li><a href="../Keywords/ListBoxItem.html" target="iframe_contentarea">ListBoxItem</a></li>
+</ul>
+<h3>Supported FrameEvents</h3>
+<ul>
+<li>FRAMEEVENT_MOUSE_ENTER</li>
+<li>FRAMEEVENT_MOUSE_LEAVE</li>
+<li>FRAMEEVENT_MOUSE_UP</li>
+<li>FRAMEEVENT_MOUSE_WHEEL</li>
+</ul>
+<hr>
+Example:
+<pre>
+IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",
+IncludeFile "UI\FrameDef\UI\EscMenuTemplates.fdf",
+
+Frame "LISTBOXITEM" "MyListBoxItemTemplate"  {
+}
+Frame "LISTBOX" "MyListBox" {
+    Height 0.08,
+    Width 0.12,
+    SetPoint CENTER, "ConsoleUI", CENTER, 0, 0,
+   
+    ControlBackdrop "ListBoxBackdrop",
+    Frame "BACKDROP" "ListBoxBackdrop" INHERITS "EscMenuEditBoxBackdropTemplate" {
+        UseActiveContext,
+    }
+
+    ListBoxScrollBar "ListScrollBar",
+    Frame "SCROLLBAR" "ListScrollBar" INHERITS WITHCHILDREN "StandardScrollBarTemplate" {
+    }
+
+    Frame "LISTBOXITEM" "A" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item A",
+    }
+    Frame "LISTBOXITEM" "B" INHERITS WITHCHILDREN "MyListBoxItemTemplate"  {
+        Text "Item B",
+    }
+    Frame "LISTBOXITEM" "C" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item C",
+    }
+    Frame "LISTBOXITEM" "D" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item D",
+    }
+    Frame "LISTBOXITEM" "E" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item E",
+    }
+    Frame "LISTBOXITEM" "F" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item F",
+    }
+    Frame "LISTBOXITEM" "G" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item G",
+    }
+    Frame "LISTBOXITEM" "H" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item H",
+    }
+    Frame "LISTBOXITEM" "I" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item I",
+    }
+    Frame "LISTBOXITEM" "J" INHERITS WITHCHILDREN "MyListBoxItemTemplate" {
+        Text "Item J",
+    }
+    
+
+    ListBoxBorder 0.01, // how big is the used border used for offsetting the items
+    
+    ListBoxItemHeight 0.013,
+    ListBoxItem ADDEND, "A", // position at which FrameName is added, sadly the target loses its name
+    ListBoxItem ADDEND, "B",
+    ListBoxItem ADDEND, "C",
+    ListBoxItem ADDEND, "D",
+    ListBoxItem ADDEND, "E",
+    ListBoxItem ADDEND, "F",
+    ListBoxItem ADDEND, "G",
+    ListBoxItem ADDEND, "H",
+    ListBoxItem ADDEND, "I",
+    ListBoxItem ADDEND, "J",
+}
+</pre>
+</html>

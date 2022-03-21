@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameType TEXTAREA</title>
+</head>
+<body>
+<h2>FrameType TEXTAREA</h2>
+<p>Scrollable multiline text display of the Frame Family.</p>
+
+<h3>FDF-Actions</h3>
+<ul>
+<li><a href="../Keywords/FrameFont.html" target="iframe_contentarea">FrameFont</a></li>
+<li><a href="../Keywords/TextAreaLineHeight.html" target="iframe_contentarea">TextAreaLineHeight</a></li>
+<li><a href="../Keywords/TextAreaLineGap.html" target="iframe_contentarea">TextAreaLineGap</a></li>
+<li><a href="../Keywords/TextAreaInset.html" target="iframe_contentarea">TextAreaInset</a></li>
+<li><a href="../Keywords/TextAreaMaxLines.html" target="iframe_contentarea">TextAreaMaxLines</a></li>
+<li><a href="../Keywords/TextAreaScrollBar.html" target="iframe_contentarea">TextAreaScrollBar</a></li>
+<li><a href="../Keywords/ControlBackdrop.html" target="iframe_contentarea">ControlBackdrop</a></li>
+</ul>
+<h3>Supported FrameEvents</h3>
+<ul>
+<li>FRAMEEVENT_MOUSE_ENTER</li>
+<li>FRAMEEVENT_MOUSE_LEAVE</li>
+<li>FRAMEEVENT_MOUSE_UP</li>
+<li>FRAMEEVENT_MOUSE_WHEEL</li>
+</ul>
+<hr>
+Example
+<pre>
+IncludeFile "UI\FrameDef\UI\EscMenuTemplates.fdf", //Frames from that fdf can be inherited in this file
+IncludeFile "UI\FrameDef\UI\QuestDialog.fdf",
+
+Frame "TEXTAREA" "MyTextArea" {
+    DecorateFileNames,
+    FrameFont "InfoPanelTextFont", 0.020, "",
+
+    TextAreaLineHeight 0.018, //Should fit used font Size, a high difference shows no text or much space between lines.
+
+    TextAreaLineGap 0.00,     //adds that much space between 2 Lines, addtional to TextAreaLineHeight.
+
+    TextAreaInset 0.035,      //Moves the Text and the scrollbar into the middle from all sides by this amount. This increases the min size for game crash.
+
+    TextAreaMaxLines 20,      //Only that amount of lines are displayed, if more lines are added oldest are removed.
+
+    TextAreaScrollBar "MyTextAreaScrollBar",
+    Frame "SCROLLBAR" "MyTextAreaScrollBar" INHERITS WITHCHILDREN "EscMenuScrollBarTemplate" {
+    }
+
+    ControlBackdrop "MyTextAreaBackdrop",
+    Frame "BACKDROP" "MyTextAreaBackdrop" INHERITS "QuestButtonBaseTemplate" {
+    }
+}
+</pre>
+
+</html>

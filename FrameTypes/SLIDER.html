@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameType SLIDER</title>
+</head>
+<body>
+<h2>FrameType SLIDER</h2>
+<p>Slider is an interactive frames to set a value inside the bounds of a min and max. Min and max are valid values. The user is able to set the value by draging the button of the Slider or clicking inside the Slider. Warcraft 3 has Vertical or Horizontal Sliders.</p>
+<p>Mostly used as free. For a functional child <a href="SCROLLBAR.html">SCROLLBAR</a>.</p>
+
+<h3>FDF-Actions</h3>
+<ul>
+<li><a href="../Keywords/SliderInitialValue.html" target="iframe_contentarea">SliderInitialValue</a></li>
+<li><a href="../Keywords/SliderLayoutHorizontal.html" target="iframe_contentarea">SliderLayoutHorizontal</a></li>
+<li><a href="../Keywords/SliderLayoutVertical.html" target="iframe_contentarea">SliderLayoutVertical</a></li>
+<li><a href="../Keywords/SliderMaxValue.html" target="iframe_contentarea">SliderMaxValue</a></li>
+<li><a href="../Keywords/SliderMinValue.html" target="iframe_contentarea">SliderMinValue</a></li>
+<li><a href="../Keywords/SliderStepSize.html" target="iframe_contentarea">SliderStepSize</a></li>
+<li><a href="../Keywords/SliderThumbButtonFrame.html" target="iframe_contentarea">SliderThumbButtonFrame</a></li>
+<li><a href="../Keywords/ScrollBarDecButtonFrame.html" target="iframe_contentarea">ScrollBarDecButtonFrame</a></li>
+<li><a href="../Keywords/ScrollBarIncButtonFrame.html" target="iframe_contentarea">ScrollBarIncButtonFrame</a></li>
+</ul>
+<h3>Supported FrameEvents</h3>
+<ul>
+<li>FRAMEEVENT_CONTROL_CLICK (BlzFrameClick)</li>
+<li>FRAMEEVENT_MOUSE_ENTER</li>
+<li>FRAMEEVENT_MOUSE_LEAVE</li>
+<li>FRAMEEVENT_MOUSE_UP</li>
+<li>FRAMEEVENT_MOUSE_WHEEL</li>
+<li>FRAMEEVENT_SLIDER_VALUE_CHANGED</li>
+</ul>
+
+<pre>
+    -- create a vertical slider by inheriting from a Scrollbar. It will use esc menu textures
+    local sliderFrame = BlzCreateFrameByType( "SLIDER", "TestSlider", BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI,0), "QuestMainListScrollBar", 0 )
+    </pre>
+
+</html>

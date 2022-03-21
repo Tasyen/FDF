@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameType MENU</title>
+</head>
+<body>
+<h2>FrameType MENU</h2>
+<p>Container of the choices of a <a href="POPUPMENU.html" target="iframe_contentarea">POPUPMENU</a>.</p>
+
+<h3>FDF-Actions</h3>
+<ul>
+<li><a href="../Keywords/MenuItem.html" target="iframe_contentarea">MenuItem</a></li>
+<li><a href="../Keywords/FrameFont.html" target="iframe_contentarea">FrameFont</a></li>
+<li><a href="../Keywords/MenuTextHighlightColor.html" target="iframe_contentarea">MenuTextHighlightColor</a></li>
+<li><a href="../Keywords/MenuItemHeight.html" target="iframe_contentarea">MenuItemHeight</a></li>
+<li><a href="../Keywords/MenuBorder.html" target="iframe_contentarea">MenuBorder</a></li>
+<li><a href="../Keywords/ControlBackdrop.html" target="iframe_contentarea">ControlBackdrop</a></li>
+</ul>
+<h3>Supported FrameEvents</h3>
+<ul>
+<li>FRAMEEVENT_MOUSE_ENTER</li>
+<li>FRAMEEVENT_MOUSE_LEAVE</li>
+<li>FRAMEEVENT_MOUSE_UP</li>
+<li>FRAMEEVENT_MOUSE_WHEEL</li>
+</ul>
+<hr>
+Example
+<pre>
+IncludeFile "UI/FrameDef/UI/EscMenuTemplates.fdf",
+Frame "MENU" "TestPopupMenu" INHERITS WITHCHILDREN "EscMenuPopupMenuMenuTemplate" {
+    // the selectable options
+    // they will try to load a Localized String
+    MenuItem "TestA",     -2,
+    MenuItem "TestB",     -2,
+    MenuItem "TestC",     -2,
+    MenuItem "TestD",     -2,
+}
+</pre>
+
+</html>

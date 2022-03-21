@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameType SIMPLEBUTTON</title>
+</head>
+<body>
+<h2>FrameType SIMPLEBUTTON</h2>
+<p>Interactive of the SimpleFrame Family. Unlike BUTTON it does not keep the focus.</p>
+<p>Only the last added event (for each SIMPLEBUTTON) triggers</p>
+
+<h3>FDF-Actions</h3>
+<ul>
+<li><a href="../Keywords/ButtonPushedTextOffset.html" target="iframe_contentarea">ButtonPushedTextOffset</a></li>
+<li><a href="../Keywords/NormalTexture.html" target="iframe_contentarea">NormalTexture</a></li>
+<li><a href="../Keywords/PushedTexture.html" target="iframe_contentarea">PushedTexture</a></li>
+<li><a href="../Keywords/DisabledTexture.html" target="iframe_contentarea">DisabledTexture</a></li>
+<li><a href="../Keywords/UseHighlight.html" target="iframe_contentarea">UseHighlight</a></li>
+</ul>
+<h3>Supported FrameEvents</h3>
+<ul>
+<li>FRAMEEVENT_CONTROL_CLICK</li>
+</ul>
+<hr>
+Example IconButton
+<pre>
+Frame "SIMPLEBUTTON" "MySimpleButton" {
+    Width 0.039,
+    Height 0.039,
+    Texture "MySimpleButtonTexture" {
+    }
+}
+</pre>
+
+</html>

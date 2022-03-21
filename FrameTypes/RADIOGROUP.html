@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - FrameType RADIOGROUP</title>
+</head>
+<body>
+<h2>FrameType RADIOGROUP</h2>
+<p>RadioGroup binds checkboxes into a group together with ControlStyle "EXCLUSIVE", one can make sure only one of them is selected. Each player can have a different selected.</p>
+
+<h3>FDF-Actions</h3>
+<ul>
+<li><a href="../Keywords/ControlStyle.html" target="iframe_contentarea">ControlStyle</a></li>
+<li><a href="../Keywords/RadioItem.html" target="iframe_contentarea">RadioItem</a></li>
+</ul>
+
+<hr>
+Example of a 4 checkbox RadioGroup
+<pre>
+IncludeFile "UI\FrameDef\UI\EscMenuTemplates.fdf",
+Frame "RADIOGROUP" "RadioGroup" {
+    ControlStyle "EXCLUSIVE",
+
+    Frame "GLUECHECKBOX" "CheckBoxA" INHERITS WITHCHILDREN "EscMenuCheckBoxTemplate" {
+        Width  0.012,
+        Height 0.012,
+        SetPoint CENTER, "ConsoleUI", CENTER, 0, 0,   
+    }
+    Frame "GLUECHECKBOX" "CheckBoxB" INHERITS WITHCHILDREN "EscMenuCheckBoxTemplate" {
+        Width  0.012,
+        Height 0.012,
+        SetPoint CENTER, "ConsoleUI", CENTER, 0.1, 0,   
+    }
+    Frame "GLUECHECKBOX" "CheckBoxC" INHERITS WITHCHILDREN "EscMenuCheckBoxTemplate" {
+        Width  0.012,
+        Height 0.012,
+        SetPoint CENTER, "ConsoleUI", CENTER, 0.15, 0,   
+    }
+    Frame "GLUECHECKBOX" "CheckBoxD" INHERITS WITHCHILDREN "EscMenuCheckBoxTemplate" {
+        Width  0.012,
+        Height 0.012,
+        SetPoint CENTER, "ConsoleUI", CENTER, 0.2, 0,   
+    }
+
+    RadioItem "CheckBoxA",   
+    RadioItem "CheckBoxB",    
+    RadioItem "CheckBoxC",    
+    RadioItem "CheckBoxD",
+}
+</pre>
+
+</html>
