@@ -6,8 +6,16 @@
 <body>
 <h2>Position</h2>
 <p>Positions on Screen are an important knowlage when using this whole UI-Frame feature. Warcraft 3 was at the beginning a 4:3 only Game. Hence their own UI-FrameWork has a coordinate system that makes sense for the 4:3 part.</p>
-<p>The Position goes from 0.0/0.0 at the Bottomleft of the minimap to the Topright with 0.8/0.6 (Topright of the Upkeep Level). The used Resolution does not matter, this values do not change. This Values are also used for Size of Frames. Pixel based size/Coords are only doable with some conversion math.</p>
-<img src="https://www.hiveworkshop.com/attachments/coords-image-56-jpg.325821/" alt="Coordinates" height="400" width="600">
+<p>The Position goes from 0.0/0.0 at the Bottomleft (Minimap) to the Topright with 0.8/0.6 (Upkeep Level). The used Resolution does not matter, this values do not change. This Values are also used for Size of Frames. Pixel based size/Coords are only doable with some conversion math.</p>
+<pre>
+Coords are for the 4:3 Screen
+
+    |0.0/0.6           0.8/0.6|
+    |                         |
+    |         0.4/0.3         |
+    |                         |
+    |0.0/0.0           0.8/0.0|
+</pre>>
 <img src="https://www.hiveworkshop.com/attachments/warcraft-3-coord-system-3-jpg.359576/" alt="Coordinates2" height="400" width="600">
     
 <p>One can imagine Frames as rectangles when one sets size and position. When only one FramePoint is placed the choosen FramePoint has a strong impact on the result. It limites the directions the Frame expands.<br>When using a point containing:
@@ -17,6 +25,7 @@
 <li>TOP can only extend downwards y wise</li>
 <li>BOTTOM can only extend upwards y wise.​</li>
 </ul>
+<img src="../Img/Extend Frame - Green Arrows.jpg" alt="Expand Limit" height="300" width="300">
 <br>Using different Points alters the result and can do some wanted Results more easy.
 </p>
 <p>Custom created Frames from the Frame group can not leave the 4:3 part of the screen. If a part of them leave it, they become malformed. A TEXT-Frame might cut off some chars. A BACKDROP becomes smaller and with that also Buttons and many others etc.<br>SimpleFrames are free from that limitation.</p>
