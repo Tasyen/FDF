@@ -10,11 +10,13 @@ FrameLevel works different for SimpleFrames and Frames.</p>
 
 <h3>For Frames:</h3>
 FrameLevel define the order in which child-Frames are above their Parent. Frames only compete with their siblings. They are ordered descending. The childFrame with the highest Level is onTop. the one with the lowest Level is directly above the parent but below it's brothers and sisters. A Frame's children are below a sibling with a higher level.
-<p><img src="https://www.hiveworkshop.com/attachments/frame-order-sketch-jpg.352639/" width="350" height="350"></p>
+<p><img src="../Img/Frame LeveL2.jpg" width="350" height="350">
+<img src="../Img/Frame Order Sketch.jpg" width="350" height="350">
+</p>
 
 <h3>For SimpleFrames:</h3>
 The one with the highest Level is on Top, parentship does not matter. When a SimpleFrame is created it copies the current Level of the Parent so it is above it. But one can change the Levels to have the parent on top, this also means that later changes to Level of the Parent are not taken over by child-SimpleFrames except for Texture/Strings, they do.
-  <p><img src="https://www.hiveworkshop.com/attachments/simpleframe-level-order-jpg.360690/" width="350" height="350"></p>
+  <p><img src="../Img/SimpleFrame Level Order.jpg" width="350" height="350"></p>
 One could say both use the same rule except that Frames start new Layers in which the Frame's children are placed while SimpleFrames have only one Layer, started by the SimpleFrame Ancient. But the special SimpleFrame children Texture/String are in Layers started by their parent SimpleFrame. Texture/String can't have children hence the layer mechanic for that group is quite simple.
 </body>
 </html>
