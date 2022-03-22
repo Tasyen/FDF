@@ -11,13 +11,68 @@
 <h3>FDF-Actions</h3>
 <ul>
 <li><a href="../Keywords/DialogBackdrop.html" target="iframe_contentarea">DialogBackdrop</a></li>
-<li><a href="../Keywords/DialogOkButton.html" target="iframe_contentarea">ControlBackdrop</a></li>
-<li><a href="../Keywords/DialogCancelButton.html" target="iframe_contentarea">ControlDisabledBackdrop</a></li>
+<li><a href="../Keywords/DialogOkButton.html" target="iframe_contentarea">DialogOkButton</a></li>
+<li><a href="../Keywords/DialogCancelButton.html" target="iframe_contentarea">DialogCancelButton</a></li>
 </ul>
 <h3>Supported FrameEvents</h3>
 <ul>
 <li>FRAMEEVENT_DIALOG_CANCEL</li>
 <li>FRAMEEVENT_DIALOG_ACCEPT</li>
 </ul>
+
+<hr>
+Example
+<pre>
+IncludeFile "UI\FrameDef\UI\EscMenuTemplates.fdf",
+IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",
+Frame "DIALOG" "MySimplyDialog" {
+    Height 0.06,
+    Width 0.09,
+    SetPoint CENTER, "ConsoleUI", CENTER, 0, 0,
+
+    DialogBackdrop "MySimplyDialogBackdrop",
+    Frame "BACKDROP" "MySimplyDialogBackdrop" {
+        UseActiveContext,
+        SetAllPoints,
+	    DecorateFileNames,
+        BackdropTileBackground,
+        BackdropBackground          "EscMenuEditBoxBackground",
+        BackdropCornerFlags         "UL|UR|BL|BR|T|L|B|R",
+        BackdropCornerSize          0.0125,
+        BackdropBackgroundInsets    0.005f 0.005f 0.005f 0.005f,
+        BackdropEdgeFile            "EscMenuEditBoxBorder",
+	    BackdropBlendAll,
+    }
+
+    Frame "TEXT" "MySimplyDialogTitleText" INHERITS "StandardTitleTextTemplate" {
+        SetPoint TOP, "MySimplyDialog", TOP, 0.0, -0.005,
+        Text "Kick Red",
+    }
+
+    DialogOkButton "MySimplyDialogOKButton",    
+    Frame "GLUETEXTBUTTON" "MySimplyDialogOKButton" INHERITS WITHCHILDREN "EscMenuButtonTemplate" {
+        Width 0.04,
+        Height 0.03,
+        SetPoint BOTTOMRIGHT,"MySimplyDialog", BOTTOM, 0, 0.005625,
+        ControlShortcutKey "KEY_OK_SHORTCUT",
+        ButtonText "ConfirmOKButtonText",
+        Frame "TEXT" "ConfirmOKButtonText" INHERITS "StandardButtonTextTemplate" {
+            Text "YES",
+        }
+    }
+
+    DialogCancelButton "MySimplyDialogCancelButton",
+    Frame "GLUETEXTBUTTON" "MySimplyDialogCancelButton" INHERITS WITHCHILDREN "StandardButtonTemplate" {
+        Width 0.04,
+        Height 0.03,
+        SetPoint BOTTOMLEFT,"MySimplyDialog", BOTTOM, 0, 0.005625,
+        ControlShortcutKey "KEY_CANCEL_SHORTCUT",
+        ButtonText "ConfirmCancelButtonText",
+        Frame "TEXT" "ConfirmCancelButtonText" INHERITS "StandardButtonTextTemplate" {
+            Text "NO",
+        }
+    }
+}
+</pre>
 
 </html>
