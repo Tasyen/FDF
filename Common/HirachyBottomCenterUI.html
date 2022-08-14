@@ -41,6 +41,8 @@
 		[0 to 7] BuffIcons + mouse Listeners
 		[x] ORIGIN_FRAME_UNIT_PANEL_BUFF_BAR_LABEL
 	[13]
+	[x] "SimpleNameValue", 0
+	[x] "SimpleBuildingActionLabel", 0
 [1] Trainer "SimpleInfoPanelBuildingDetail",1
 	[0] "SimpleBuildTimeIndicator",1
 		[0] Bar Border
@@ -49,14 +51,23 @@
 	[3]	Que Bottom Button Container
 		[0 to 5] Button
 	[4]
+	[x] "SimpleBuildingNameValue", 1
+	[x] "SimpleBuildingDescriptionValue", 1
+	[x] "SimpleBuildingActionLabel", 1
+	[x] "SimpleBuildQueueBackdrop", 1
 [2] Transporter "SimpleInfoPanelCargoDetail",2
 	[0] CargoContainer
 		[0 to 9] Cargo Button Container (includes Box, pos themself the first time a Transporter with content is selected)
 			[0] Button
 			[1] Life Bar
 			[2] Mana Bar
+	[x] "SimpleHoldNameValue",2
+	[x] "SimpleHoldDescriptionValue",2
 [3] Item on Ground "SimpleInfoPanelItemDetail",3
+	[x] "SimpleItemNameValue", 3
+	[x] "SimpleItemDescriptionValue", 3
 [4] selectable Gate/tree/etc "SimpleInfoPanelDestructableDetail",4
+	[x] "SimpleDestructableNameValue", 4
 [5] multiple unit group selection
 	[0] ContainerGroupButtons
 		[0 to 11] ButtonContainer
