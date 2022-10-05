@@ -8,7 +8,7 @@
 <p>Format: SetPoint FramePoint-Own, FrameName , FramePoint-FrameName, xOffset , yOffset,</p>
 <p>Example: SetPoint LEFT, "UpperButtonBarAlliesButton", RIGHT, 0, 0,</p>
 <p>Example: SetPoint TOPLEFT, "InfoPanelIconAllyWoodIcon", BOTTOMLEFT, 0.0, 0.0, </p>
-<p>Purpose: Pos the frame with its own FramePoint to FramePoint-FrameName with xOffset and yOffset (+x is right +y is up), <a href="UseActiveContext.html">UseActiveContext</a> can alter the result. When the Frame is created the Frame basicly calls BlzFrameSetPoint(self, FramePoint-Own, BlzGetFrameByName(FrameName, 0), FramePoint-FrameName, x, y). When having UseActiveContext, in the frame with SetPoint it replaces 0 inside BlzGetFrameByName with the CreationContext of the current create Frame.</p>
+<p>Purpose: Pos the frame with its own FramePoint to FramePoint-FrameName with xOffset and yOffset (+x is right +y is up). When the Frame is created "call" <b>BlzFrameSetPoint(self, FramePoint-Own, BlzGetFrameByName(FrameName, 0), FramePoint-FrameName, x, y)</b>.<br> With <a href="UseActiveContext.html">UseActiveContext</a>, use CreationContext inside BlzGetFrameByName instead of 0. <br>The targeted Frame needs to be created before the current Frame. It can be a brother but then needs to be above (lineNr). </p>
 <p>Used in: EveryWhere</p>
 </body>
 </html>
