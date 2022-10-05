@@ -7,7 +7,7 @@
 <h2>ToolTip</h2>
 <p>Format: ToolTip FrameName,</p>
 <p>Example: ToolTip "CodeTextFrame",</p>
-<p>Purpose: When this Frame is created it "calls" BlzFrameSetTooltip(this, BlzGetFrameByName(frameName, createdContext))</p>
+<p>Purpose: After this Frame was created (Includes all children) it "calls" BlzFrameSetTooltip(this, BlzGetFrameByName(frameName, createdContext)). When the ToolTipFrame is created in another Frame then the ToolTipFrame needs to be written at an earlier line.</p>
 <p>Used in: Everywhere</p>
 </body>
 </html>
