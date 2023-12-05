@@ -7,7 +7,8 @@
 <h2>MenuItem</h2>
 <p>Format: MenuItem Text, integer, </p>
 <p>Example: MenuItem "ON",        -2, </p>
-<p>Purpose: Adds an Selectable option to a MENU / PopupMenuFrame. The number is always -2 in Blizzards fdfs.</p>
+<p>Purpose: Adds an Selectable option to a MENU / PopupMenuFrame. The number is always -2 in Blizzards fdfs. The List items are parsed from first line to lowest line.</p>
+<p>Integer: Where in the List is the item added. I suspect the menu to work based on a linked List.<br>-2 End of List<br> -1 Top Of List.<br>0+ place the item x after the top or something like that. You need at least one item that uses -1/-2, using 0+ can crash the game. I strongly suggest to use -1 & -2.</p>
 <p>Used in: MENU</p>
 </body>
 </html>
