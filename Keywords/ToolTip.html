@@ -21,8 +21,18 @@ Frame "FRAME" "TestFrame" {
 		Height 0.03,
 		UseActiveContext,
 		SetPoint CENTER, "ConsoleUI", CENTER, 0, 0,
-		ButtonText "BText_XX",
 		ToolTip "ToolTipFrame",
+	}
+}
+
+Frame "GLUETEXTBUTTON" "TestButtonFrame" INHERITS WITHCHILDREN "EscMenuButtonTemplate" {
+	Width 0.13,
+	Height 0.03,
+	SetPoint CENTER, "ConsoleUI", CENTER, 0, 0,
+	ToolTip "ToolTipFrame",
+	Frame "TEXT" "ToolTipFrame" {
+		Text "Test Tooltip Text",
+		SetPoint BOTTOM, "TestButtonFrame", TOP, 0, 0,
 	}
 }
 </pre>
