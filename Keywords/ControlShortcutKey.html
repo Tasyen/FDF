@@ -7,7 +7,39 @@
 <h2>ControlShortcutKey</h2>
 <p>Format: ControlShortcutKey Text,</p>
 <p>Example: ControlShortcutKey "KEY_CANCEL_SHORTCUT", </p>
-<p>Purpose: This Frame will read a StringList value and use it for it's hotkey. Only got it working when the Parent had TabFocusPush </p>
-<p>Used in: </p>
+<p>Purpose: This Frame will read a StringList value and use it for it's hotkey. Only got it working when the Parent had TabFocusPush.<br>Only uses the First Char of the loaded StringList entry "27" becomes just hotkey 2.</p>
+<p>Used in: BUTTON, GLUEBUTTON, TEXTBUTTON, GLUETEXTBUTTON</p>
+
+---------------<br>
+<h3>Example fdf</h3>
+<pre>
+IncludeFile "UI\FrameDef\UI\EscMenuTemplates.fdf",
+
+// The Hotkeys for the Buttons
+StringList {
+   KeyMyButton1 "1",
+   KeyMyButton2 "2",
+   KeyMyButton3 "3",
+}
+
+Frame "FRAME" "MyButtonF" {
+      Width 0.1,
+      Height 0.1,
+      TabFocusPush, // Enables ControlShortcutKey for children
+      LayerStyle "IGNORETRACKEVENTS", // this Frame itself will not control/Block the Mouse
+      Frame "GLUEBUTTON" "MyButton1" INHERITS WITHCHILDREN "EscMenuButtonTemplate" {
+         ControlShortcutKey "KeyMyButton1",
+         SetPoint TOP, "MyButtonF", TOP, 0, 0,
+      }
+      Frame "GLUEBUTTON" "MyButton2" INHERITS WITHCHILDREN "EscMenuButtonTemplate" {
+         ControlShortcutKey "KeyMyButton2",
+         SetPoint TOP, "MyButton1", BOTTOM, 0, 0,       
+      }
+      Frame "GLUEBUTTON" "MyButton3" INHERITS WITHCHILDREN "EscMenuButtonTemplate" {
+         ControlShortcutKey "KeyMyButton3",
+         SetPoint TOP, "MyButton2", BOTTOM, 0, 0,       
+      }    
+}
+</pre>
 </body>
 </html>
