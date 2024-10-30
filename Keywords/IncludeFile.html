@@ -9,6 +9,7 @@
 <p>Example: IncludeFile "UI\FrameDef\Glue\StandardTemplates.fdf",</p>
 <p>Example: IncludeFile "UI\FrameDef\UI\EscMenuTemplates.fdf",</p>
 <p>Purpose: Allows to inherit Frames from included files. One can add multiple IncludeFile lines. The files mentioned in the IncludeFile list should be sorted by Alphabet (abc)</p>
+<p>Recursion:  When the loaded targetFile uses IncludeFile, then your fdf loads it too. "Escmenuoptionspanel" Includes "EscMenuTemplates", therefore yours includes both when you include "Escmenuoptionspanel".</p>
 <p>Used in: Fdf</p>
 </body>
 </html>
