@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Hirachy ConsoleUI</title>
+</head>
+<body>
+<h2>ConsoleUI</h2>
+<p>ConsoleUI is the ancestor of SimpleFrames.</p>
+<pre>
+[0] "ConsoleTopBar", 0
+[1] "ConsoleBottomBar", 0
+	[0] "ConsoleBottomBarOverlay", 0
+	[1] "CommandBarFrame", 0
+		[0 to 11] "CommandButton_0",0 to "CommandButton_11",0
+			[0] ORIGIN_FRAME_COMMAND_BUTTON
+				Created when required
+				[0] Cooldown
+				[1]
+				[2] ChargeBox	
+	[2] "SimpleInfoPanelUnitDetail", 0 Parent ?
+	[3] IdleWorkerFace
+	[4] ORIGIN_FRAME_UBERTOOLTIP ?
+[2] "ResourceBarFrame",0
+	[0] Mouse Listener (Gold)
+	[1] Mouse Listener (Lumber)
+	[2] Mouse Listener (UpKeep)
+	[3] Mouse Listener (Food)
+	[???] Fps/Apm/Ping display
+	[x] "ResourceBarGoldText",0
+	[x] "ResourceBarLumberText",0
+	[x] "ResourceBarSupplyText",0
+	[x] "ResourceBarUpkeepText",0
+[3] "UpperButtonBarFrame",0
+	[0] Quest/"UpperButtonBarQuestsButton",0
+	[1] Menu/"UpperButtonBarMenuButton",0
+	[2] Alliance/"UpperButtonBarAlliesButton",0
+	[3] Log/"UpperButtonBarChatButton",0
+[4] "MiniMapButtonBar",0
+	[0 to 4] Buttons 0(Top), 4(Bottom)
+[5] command button mouse deadzone
+[6] Hero ButtonBar
+	[0 to 6] HeroButtons
+		[0] HP-Bar
+		[1] MP-Bar
+		[2] Unspent-SkillPointsBox (only when this slot ever had unspent SkillPoints)
+[7] Idle worker Button Container
+	[0] Button
+		[0] Charges Box (created with the first idle worker)
+[8] World Object Hover info (exist after any object was hovered with the mouse)
+</pre>
+
+</body>
+</html>
