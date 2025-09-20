@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - NormalTexture</title>
+</head>
+<body>
+<h2>NAMED</h2>
+<p>Format: SimpleButtonChild NAMED name, Texture, </p>
+<p>Example: NormalTexture NAMED "MyIconA", "MyUpperMenuButtonBackground", </p>
+<p>Example: PushedTexture NAMED "MyIconB", "MyUpperMenuButtonPushedBackground", </p>
+<p>Purpose: give a name to functional texture/string children of a SIMPLEBUTTON. Then they can be accessed in map script with BlzGetFrameByName</p>
+<p>Used in: SIMPLEBUTTON</p>
+<pre>
+Texture "MyUpperMenuButtonHighlight" {
+    File "UpperMenuButtonTexture",
+    TexCoord 0.0, 0.6640625, 0.75, 0.921875,
+    AlphaMode "ADD",
+}
+Texture "TextureTemplate" {}
+Frame "SIMPLEBUTTON" "TestA" {
+    DecorateFileNames,
+    Width 0.085,
+    Height 0.022,
+    NormalTexture NAMED "MyIconA2","TextureTemplate",
+    PushedTexture NAMED "MyIconB2","TextureTemplate",
+    DisabledTexture NAMED "MyIconC2","TextureTemplate",
+    UseHighlight "MyUpperMenuButtonHighlight",
+}</pre>
+</body>
+</html>
