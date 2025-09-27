@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - UseBackdrop</title>
+</head>
+<body>
+<h2>UseBackdrop</h2>
+<p>Format: UseBackdrop "name", </p>
+<p>Purpose: SimpleFrame <a href="Backdrop.html">Backdrop</a> with the Backdrop defined outside of the simpleframe</p>
+<p>Used in: SIMPLEBUTTON, SIMPLECHECKBOX, SIMPLEFRAME, SIMPLESTATUSBAR</p>
+<pre>
+Backdrop "TestBackdrop" {
+    BackdropTileBackground,
+    BackdropBackground  "EscMenuEditBoxBackground",
+    BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+    BackdropCornerSize  0.0125,
+    BackdropBackgroundSize  0.256,
+    BackdropBackgroundInsets 0.005 0.005 0.005 0.005,
+    BackdropEdgeFile  "EscMenuEditBoxBorder",
+}
+
+Frame "SIMPLEFRAME" "SimpleBackdrop" {
+    DecorateFileNames,
+    Width 0.1,
+    Height 0.1,
+    SetPoint CENTER, "ConsoleUI", CENTER,0.0,0.1,
+    UseBackdrop "TestBackdrop",
+}
+</pre>
+</body>
+</html>

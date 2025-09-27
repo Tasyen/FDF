@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Warcraft 3 Frames - Backdrop</title>
+</head>
+<body>
+<h2>Backdrop</h2>
+<p>Format: Backdrop "name" INHERITS "name2" {}</p>
+<p>Format: Backdrop {}</p>
+<p>Purpose: Define a Backdrop used by SimpleFrames with <a href="UseBackdrop.html">UseBackdrop</a> or placed directly inside a SimpleFrame.<br> The Backdrop can not be accessed by BlzGetFrameByName and copies the Frames position & Size. It can do most what Frame "BACKDROP" can do. Layer does not work on it and the border is higher then the background but the Backdrop is inside the SimpleFrames Layer. Will show no background when BackdropBackground is empty or invalid. But a Border File must be correct when it is requested with BackdropEdgeFile. Always uses BackdropBlendAll. Like Texture uses DecorateFileNames from the parent simpleframe.  </p>
+<p>Used in: SIMPLEBUTTON, SIMPLECHECKBOX, SIMPLEFRAME, SIMPLESTATUSBAR</p>
+<pre>
+Frame "SIMPLESTATUSBAR" "SimpleBackdrop2" {
+    DecorateFileNames,
+    Width 0.1,
+    Height 0.1,
+    SetPoint CENTER, "ConsoleUI", CENTER,0.0,0.1,
+    Backdrop {
+        BackdropTileBackground,
+        BackdropBackground  "EscMenuEditBoxBackground",
+        BackdropCornerFlags "UL|UR|BL|BR|T|L|B|R",
+        BackdropCornerSize  0.0125,
+        BackdropBackgroundSize  0.1,
+        BackdropBackgroundInsets 0.005 0.005 0.005 0.005,
+        BackdropEdgeFile  "EscMenuEditBoxBorder",
+//        BackdropBlendAll,
+    }
+}
+</pre>
+</body>
+</html>
