@@ -7,7 +7,7 @@
 <h2>Backdrop</h2>
 <p>Format: Backdrop "name" INHERITS "name2" {}</p>
 <p>Format: Backdrop {}</p>
-<p>Purpose: Define a Backdrop used by SimpleFrames with <a href="UseBackdrop.html">UseBackdrop</a> or placed directly inside a SimpleFrame.<br> The Backdrop can not be accessed by BlzGetFrameByName and copies the Frames position & Size. It can do most what Frame "BACKDROP" can do. Layer does not work on it and the border is higher then the background but the Backdrop is inside the SimpleFrames Layer. Will show no background when BackdropBackground is empty or invalid. But a Border File must be correct when it is requested with BackdropEdgeFile. Always uses BackdropBlendAll. Like Texture uses DecorateFileNames from the parent simpleframe.  </p>
+<p>Purpose: Define a Backdrop used by SimpleFrames with <a href="UseBackdrop.html">UseBackdrop</a> or placed directly inside a SimpleFrame.<br> The Backdrop can not be accessed by BlzGetFrameByName and copies the Frames position & Size. It can do most what Frame "BACKDROP" can do. Layer does not work on it and the border is higher then the background but the Backdrop is inside the SimpleFrames Layer. Textures & Strings inside Layer "BACKGROUND" often are lower than the Backdrop. Will show no background when BackdropBackground is empty or invalid. But a Border File must be correct when it is requested with BackdropEdgeFile. Always uses BackdropBlendAll. Like Texture uses DecorateFileNames from the parent simpleframe.  </p>
 <p>Used in: SIMPLEBUTTON, SIMPLECHECKBOX, SIMPLEFRAME, SIMPLESTATUSBAR</p>
 <pre>
 Frame "SIMPLESTATUSBAR" "SimpleBackdrop2" {
@@ -24,6 +24,32 @@ Frame "SIMPLESTATUSBAR" "SimpleBackdrop2" {
         BackdropBackgroundInsets 0.005 0.005 0.005 0.005,
         BackdropEdgeFile  "EscMenuEditBoxBorder",
 //        BackdropBlendAll,
+    }
+}
+
+Frame "SIMPLEFRAME" "SimpleBackdrop3" {
+    Width 0.1,
+    Height 0.1,
+    SetPoint CENTER, "ConsoleUI", CENTER,0.0,0.1,
+    Backdrop {
+        BackdropBackground  "ReplaceableTextures/CommandButtons/BTNPriest",
+        BackdropMirrored,
+    }
+    Layer "ARTWORK" {
+    Texture {
+        Width 0.05,
+        Height 0.05,
+        File  "ReplaceableTextures/CommandButtons/BTNPriest",
+        Anchor CENTER,0,0,
+    }
+    }
+    Layer "BACKGROUND" {
+    Texture {
+        Width 0.05,
+        Height 0.05,
+        File  "ReplaceableTextures/CommandButtons/BTNHeroPaladin",
+        Anchor CENTER,0,0.05,
+    }
     }
 }
 </pre>
